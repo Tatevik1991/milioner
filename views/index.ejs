@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+      <% for(var i=0; i<schema.length; i++) {%>
+      <ul>
+      <li> <%= schema[i].question %></li>
+      <li>A:<%= schema[i].A %></li>
+      <li>B:<%= schema[i].B %></li>
+      <li>C:<%= schema[i].C %></li>
+      <li>D:<%= schema[i].D %></li>
+      </ul>
+      <form action="/answer" method="POST">
+         answer <input type="text" name="result">
+          <input type="submit">
+
+      </form>
+     <% } %>
+
+
+
+  </body>
+</html>
