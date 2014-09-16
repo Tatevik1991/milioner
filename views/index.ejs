@@ -6,20 +6,30 @@
   <body>
 
       <% for(var i=0; i<schema.length; i++) {%>
-      <ul>
-      <li> <%= schema[i].question %></li>
-      <li>A:<%= schema[i].A %></li>
-      <li>B:<%= schema[i].B %></li>
-      <li>C:<%= schema[i].C %></li>
-      <li>D:<%= schema[i].D %></li>
-      </ul>
-      <form action="/answer" method="POST">
-         answer <input type="text" name="result">
-          <input type="submit">
+     <div>
+      <div><%= schema[i].question %></div>
+      <input type = "radio"  class="radio" id = "answer" name = "A" value="A checked"> A:<%= schema[i].A %> </input> <br>
+       <input type = "radio" class="radio" id = "answer" name = "A" value="B"> B:<%= schema[i].B %> </input> <br>
+       <input type = "radio"  class="radio" id = "answer" name = "A" value="C"> C:<%= schema[i].C %> </input> <br>
+       <input type = "radio"  class="radio" id = "answer" name = "A" value="D"> D:<%= schema[i].D %> </input> <br>
 
-      </form>
+     </div>
+
+
+  <input type="submit" onclick = "submit()">
      <% } %>
 
+  <script>
+      function submit(){
+       var inputs = document.getElementsByClassName("radio");
+          for (var i=0; i<inputs.length; i++){
+              if(inputs[i].checked === true){
+                  alert(inputs[i].value);
+              }
+          }
+
+      }
+  </script>
 
 
   </body>

@@ -9,7 +9,7 @@ router.get('/', function(req, res){
     var db = req.app.get('db'),
     schema = db.model('schema');
 
-    schema.find({}, {_id:false, __v:false}, function(e, data){
+    schema.find({}, {_id:false, __v:false}).limit(1).exec( function(e, data){
 
        res.render("index", {schema:data});
     });
@@ -30,12 +30,6 @@ router.post('/admin', function(req, res){
    schema({question:question, A:A, B:B, C:C, D:D, answer:answer}).save(function(e){
        console.log("success");
    });
-
-});
-
-router.post('/answer', function (req, res){
-    var result =req.body.result;
-    console.log(result);
 
 });
 
