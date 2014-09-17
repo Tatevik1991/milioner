@@ -4,7 +4,9 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-<form method = "POST" action="#">
+
+
+<form method = "POST" action="/admin">
     <textarea id="question" name="question" rows="5" cols="40"></textarea> <br>
     <span>A: </span><input type="text" name="A" > <br>
     <span>B:</span> <input type="text" name="B" > <br>
@@ -13,5 +15,10 @@
     <span>answer:</span><input type="text" name="answer" > <br>
     <input type="submit" value="Submit" >
 </form>
+
+<form method="POST" action="/logout">
+    <input type="submit" value="LogOut">
+</form>
+
 </body>
 </html>

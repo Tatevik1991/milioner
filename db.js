@@ -11,8 +11,13 @@ var schema = new Schema({
    result:String
 
 });
+var admin = new Schema({
+    username: String,
+    password: String
+});
 
 mongoose.model("schema", schema);
+mongoose.model("admin", admin);
 mongoose.connect("mongodb://localhost/milion");
 
 module.exports = mongoose;
